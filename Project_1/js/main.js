@@ -98,12 +98,48 @@ for (const property in Services) {
 }
 
 
-/* Get User Data from Object */
-const users = [
-    {
-        name: 'Mohammed',
-        password: '123',
-        email: 'tigermo2009@hotmail.com'
-    },
-];
+/* Save User Data in localStorage and get it */
 
+// Sign Up
+$('.signUp').click(function () {
+    let inputUser = $('#userName').val();
+    let inputPassword = $('#password').val();
+    let inputEmail = $('#email').val();
+
+    if (inputUser !== "" && inputPassword !== "" && inputEmail !== "") {
+        const users = {
+            name: inputUser,
+            password: inputPassword,
+            email: inputEmail
+        };
+        localStorage.setItem('userData', JSON.stringify(users));
+        $('.Sign_up').css('display', 'none');
+        $('.Sign_in').css('display', 'block');
+    } else {
+        $('.Sign_up .alert-warning').css('display', 'block');
+    }
+});
+
+// Sign in
+$('.signIn').click(function () {
+    let inputUser = $('#signIn-username').val();
+    let inputPassword = $('#signIn-password').val();
+
+    if (inputUser !== "" && inputPassword !== "") {
+        let data = localStorage.getItem('userData');
+
+        let userName = JSON.parse(data).name;
+        let password = JSON.parse(data).password;
+
+        if (inputUser === userName && inputPassword === password) {
+            $('.Sign_in').css('display', 'none');
+            $('.homePage').css('display', 'block');
+            $('.navbar').css('display', 'block');
+            $('.footer').css('display', 'block');
+        } else {
+            $('.alert-warning').css('display', 'block');
+        }
+    } else {
+        alert(`Please enter your information !!!`);
+    }
+});
