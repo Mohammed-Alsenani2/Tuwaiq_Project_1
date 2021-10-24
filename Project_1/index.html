@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="">
+    <!-- #Sign up Page -->
+    <div class="Sign_up" style="display: none">
+        <div class="container">
+            <div class="row" text-align="center">
+                <div class="col-md-3"></div>
+                <div class="col-12 col-md-6">
+                    <div class="card" style="margin-top: 20%;">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <h1>Sign up</h1>
+                                <div class="form-floating mb-3">
+                                    <input type="username" class="form-control" id="floatingInput"
+                                        placeholder="User name">
+                                    <label for="floatingInput">User name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="floatingPassword"
+                                        placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6" style="text-align: center">
+                                        <button type="button" class="btn btn-success" style="margin-top: 30px">Sign
+                                            up</button>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #Sign in Page -->
+    <div class="Sign_in" style="display: none">
+        <div class="container">
+            <div class="row" text-align="center">
+                <div class="col-md-3"></div>
+                <div class="col-12 col-md-6">
+                    <div class="card" style="margin-top: 20%;">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <h1>Sign in</h1>
+                                <div class="card" style="border: none;">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput"
+                                            placeholder="name@example.com">
+                                        <label for="floatingInput">Email address</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="floatingPassword"
+                                            placeholder="Password">
+                                        <label for="floatingPassword">Password</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-6" style="text-align: center">
+                                            <button type="button" class="btn btn-success" style="margin-top: 30px">Sign
+                                                in</button>
+                                        </div>
+                                        <div class="col-md-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Services</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#header">
+                            <i class="fas fa-home"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#services">
+                            <i class="fas fa-hands-helping"></i>Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#search">
+                            <i class="fas fa-search"></i>Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#statistics">
+                            <i class="fas fa-signal"></i>Statistics</a>
+                    </li>
+                </ul>
+                <span>
+                    <i class="fas fa-sun remove" id="icon-light"></i>
+                    <i class="fas fa-moon" id="icon-dark"></i>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- #Home Page -->
+    <div class="homePage">
+        <!-- #headr -->
+        <div class="row" id="header">
+            <div class="col head">
+                <h1><b>Buying</b> and <b>selling</b> services</h1>
+                <h3>Get your work done easily and safely</h3>
+                <button type="button" class="btn btn-success">GET STARTED</button>
+            </div>
+        </div>
+
+        <!-- #services -->
+        <div class="container services" id="services">
+            <h1>services</h1>
+            <div class="row services-items">
+                <!-- <div class="col-12 col-md-3">
+                    <div class="card">
+                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="..." height="300">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- #search -->
+        <div class="row" id="search">
+            <div class="col search">
+                <h1>search</h1>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text">
+                    <button type="button" class="btn btn-success">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- #statistics -->
+        <div class="container services" id="statistics">
+            <h1>statistics</h1>
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <div class="card">
+                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card">
+                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card">
+                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card">
+                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #Services Page -->
+    <div class="servicesPage" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="category-title"></h1>
+                </div>
+            </div>
+            <div class="row category-items">
+            </div>
+        </div>
+    </div>
+
+    <!-- #One Service Page -->
+    <div class="oneServicePage" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 col-md-10">
+                    <h1 class="service-title"></h1>
+                </div>
+                <div class="col-4 col-md-2" style="text-align: right">
+                    <button type="button" class="btn btn-success">Buy
+                        <i class="fas fa-shopping-basket"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="card">
+                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top service-img" alt="...">
+                        <div class="card-body">
+                            <p class="card-text service-description"></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title service_card">service card</h5>
+                            <hr>
+                            <div class="row" style="margin-top: 0">
+                                <div class="col">
+                                    Reviews
+                                </div>
+                                <div class="col stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <div class="col">
+                                    Buyers
+                                </div>
+                                <div class="col">
+                                    5
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <div class="col">
+                                    Delivery time
+                                </div>
+                                <div class="col">
+                                    2 Days
+                                </div>
+                            </div>
+                            <hr>
+                            <h5 class="card-title service_card">service owner</h5>
+                            <div class="row" style="margin-top: 10px">
+                                <div class="col-4">
+                                    <img src="image/Home-Landing-scaled.jpeg" class="img-fluid user_pic" alt="...">
+                                </div>
+                                <div class="col-8">
+                                    <div class="row" style="margin-top: 0">
+                                        <div class="col">Mohammed Alsenani </div>
+                                    </div>
+                                    <!-- <div class="row" style="margin-top: 10px; text-align: right">
+                                        <div class="col">
+                                            <button type="button" class="btn btn-success">contact</button>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title service_card">Share service</h5>
+                            <hr>
+                            <div style="text-align:center">
+                                <a class="btn btn-primary2" style="background-color: #3b5998;" href="#!"
+                                    role="button"><i class="fab fa-facebook-f"></i></a>
+
+                                <!-- Twitter -->
+                                <a class="btn btn-primary2" style="background-color: #55acee;" href="#!"
+                                    role="button"><i class="fab fa-twitter"></i></a>
+
+                                <!-- Google -->
+                                <a class="btn btn-primary2" style="background-color: #dd4b39;" href="#!"
+                                    role="button"><i class="fab fa-google"></i></a>
+
+                                <!-- Instagram -->
+                                <a class="btn btn-primary2" style="background-color: #ac2bac;" href="#!"
+                                    role="button"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #Basket Page -->
+    <div class="basketPage" style="display: none">
+
+        <!-- #labtop Basket -->
+        <div class="container big-screen">
+            <div class="row">
+                <div class="col-10">
+                    <h1>Shopping Basket</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="card">
+                        <div class="card-body basket">
+                            <div class="row basket_title">
+                                <div class="col-6">
+                                    service
+                                </div>
+                                <div class="col center">
+                                    count
+                                </div>
+                                <div class="col center">
+                                    price
+                                </div>
+                                <div class="col center">
+                                    delete
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-6" style="padding-left: 0;">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="col">
+                                            <div class="row">
+                                                <h3>service title</h3>
+                                            </div>
+                                            <div class="row" style="text-align: justify;">
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam quia
+                                                perferendis exercitationem explicabo perspiciatis? Consequatur provident
+                                                facere libero fuga eveniet expedita suscipit distinctio sint, sequi quia
+                                                odio ratione veritatis laborum?
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col center">
+                                    2
+                                </div>
+                                <div class="col center">
+                                    5$
+                                </div>
+                                <div class="col center">
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- #Phone Basket -->
+        <div class="container small-screen">
+            <div class="row">
+                <div class="col-10">
+                    <h1>Shopping Basket</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="card">
+                        <div class="card-body basket">
+                            <div class="row" style="padding-bottom: 30px;">
+                                <div class="col-4 basket_title">
+                                    <div class="row">service</div>
+                                </div>
+                                <div class="col-8">
+                                    <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
+                                    <div class="col">
+                                        <div class="row">
+                                            <h3>service title</h3>
+                                        </div>
+                                        <div class="row" style="text-align: justify;">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam quia
+                                            perferendis exercitationem explicabo perspiciatis?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 basket_title">
+                                    <div class="row">count</div>
+                                </div>
+                                <div class="col-8">
+                                    2
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 basket_title">
+                                    <div class="row">price</div>
+                                </div>
+                                <div class="col-8">
+                                    5$
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 basket_title">
+                                    <div class="row">delete</div>
+                                </div>
+                                <div class="col-8">
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #footer -->
+    <div class="row">
+        <div class="col footer">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h1>Follow us</h1>
+                    <!-- Facebook -->
+                    <a class="btn btn-primary2" style="background-color: #3b5998;" href="#!" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-primary2" style="background-color: #55acee;" href="#!" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-primary2" style="background-color: #dd4b39;" href="#!" role="button"><i
+                            class="fab fa-google"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-primary2" style="background-color: #ac2bac;" href="#!" role="button"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-primary2" style="background-color: #0082ca;" href="#!" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <!-- Youtube -->
+                    <a class="btn btn-primary2" style="background-color: #ed302f;" href="#!" role="button"><i
+                            class="fab fa-youtube"></i></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-primary2" style="background-color: #333333;" href="#!" role="button"><i
+                            class="fab fa-github"></i></a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h1>Contact us</h1>
+                    <div class="card">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Comments</label>
+                        </div>
+                        <button type="button" class="btn btn-success">SEND</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

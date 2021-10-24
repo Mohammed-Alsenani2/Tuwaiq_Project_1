@@ -1,0 +1,471 @@
+:root{
+    --bs-dark: #212529;
+    --bs-light: #f8f9fa;
+}
+
+body {
+    font-family: Tajawal, Arial;
+}
+
+.dark{
+    background-color: var(--bs-dark)
+}
+
+.row {
+    width: 100%;
+    margin: 0;
+}
+
+.card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+/* Dark mode */
+.remove{
+    display: none;
+}
+
+
+/* #navbar */
+
+.navbar-dark .navbar-toggler-icon,
+.navbar-light .navbar-toggler-icon {
+    background-image: url("https://cdn-icons.flaticon.com/png/512/4442/premium/4442029.png?token=exp=1634986229~hmac=dab20c35cb01bce8d6687c861d8a9c23");
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar .fas {
+    margin-right: 5px;
+}
+
+/* #Home Page Design */
+.homePage .row {
+    width: 100%;
+    margin: 0;
+}
+
+.homePage .head {
+    padding: 0;
+    background-image: linear-gradient(to bottom, rgba(200, 248, 208, 0.52), rgba(13, 75, 29, 0.73)), url('../image/Home-Landing-scaled.jpeg');
+    height: 569px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.homePage .head h1 {
+    padding-top: 13%;
+    color: #212529;
+}
+
+.homePage .head h3 {
+    text-transform: uppercase;
+}
+
+.homePage .head h1 b {
+    color: #B68D40;
+}
+
+.homePage .head button {
+    margin-top: 20px;
+}
+
+.homePage h1 {
+    text-align: center;
+    margin: 30px 0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.homePage .card {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.homePage .search {
+    padding: 0;
+    background-image: linear-gradient(to bottom, rgba(200, 248, 208, 0.52), rgba(13, 75, 29, 0.73)), url('../image/Home-Landing-scaled.jpeg');
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.homePage .search h1 {
+    color: #fff;
+}
+
+.homePage .search-box {
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 15px;
+}
+
+.homePage .search-box i {
+    font-size: 38px;
+    color: #71916d;
+}
+
+.homePage .search-box input {
+    width: 77%;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.homePage .search-box input:focus {
+    outline: none;
+}
+
+.services-items .card img,
+.category-items .card img {
+    height: 170px;
+}
+
+.btn-success {
+    background-color: #B68D40;
+    border: 1px solid #B68D40;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #122620;
+    border: 1px solid #122620;
+}
+
+
+/* #footer Design */
+
+
+.footer {
+    padding: 0;
+    background-image: linear-gradient(to bottom, rgba(200, 248, 208, 0.52), rgba(13, 75, 29, 0.73)), url('../image/Home-Landing-scaled.jpeg');
+    height: 569px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.footer .card {
+    padding: 30px;
+}
+
+.footer textarea {
+    resize: none;
+}
+
+.footer button {
+    margin-top: 20px;
+}
+
+.footer h1 {
+    color: #fff;
+}
+
+.btn-primary2 {
+    color: #fff;
+    border-color: none !important;
+}
+
+.btn:hover {
+    color: aliceblue;
+}
+
+
+
+
+/* #Services Page Design */
+
+.servicesPage .container {
+    margin-top: 20px;
+}
+
+.servicesPage .container .row {
+    margin-top: 60px;
+}
+
+.servicesPage .card {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* #One Service Page Design */
+
+.oneServicePage .container {
+    margin-top: 20px;
+}
+
+.oneServicePage .container .row {
+    margin-top: 60px;
+}
+
+.oneServicePage .card {
+    margin-bottom: 15px;
+}
+
+.oneServicePage .service_card {
+    text-transform: uppercase;
+}
+
+.stars {
+    color: #fa9747;
+}
+
+.user_pic {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+
+
+
+/* #Basket Page Design */
+
+.small-screen {
+    display: none;
+}
+
+.big-screen {
+    display: block;
+}
+
+.basketPage h1 {
+    margin-bottom: 60px;
+}
+
+.basketPage .container {
+    margin-top: 20px;
+}
+
+.basketPage .container {
+    margin-top: 60px;
+}
+
+.basketPage .card {
+    margin-bottom: 15px;
+}
+
+.basket_title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.basket h3 {
+    padding-left: 0;
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #122620;
+    border-color: #122620;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    color: #fff;
+    background-color: #0b400e;
+    border-color: #0b400e;
+}
+
+
+/* #Sign in Page Design */
+
+.Sign_in {
+    background-image: linear-gradient(to bottom, rgba(18, 38, 32, 0.52), rgba(214, 173, 96, 0.73)), url(../image/Home-Landing-scaled.jpeg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.Sign_in h1 {
+    margin-bottom: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+
+/* #Sign up Page Design */
+
+.Sign_up {
+    background-image: linear-gradient(to bottom, rgba(18, 38, 32, 0.52), rgba(214, 173, 96, 0.73)), url(../image/Home-Landing-scaled.jpeg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.Sign_up h1 {
+    margin-bottom: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/* #Theme Design */
+.fa-sun {
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.fa-moon{
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+/* #Phone Design */
+
+@media (max-width: 576px) {
+
+    /* #Home Page Design */
+    .homePage .head {
+        padding: 0;
+        background-image: linear-gradient(to bottom, rgba(200, 248, 208, 0.52), rgba(13, 75, 29, 0.73)),
+            url('../image/Home-Landing-scaled-phone.jpeg');
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        background-attachment: fixed;
+    }
+
+    .homePage .head h1 {
+        font-size: 33px;
+    }
+
+    .homePage .search {
+        padding: 0;
+        background-image: linear-gradient(to bottom, rgba(200, 248, 208, 0.52), rgba(13, 75, 29, 0.73)),
+            url('../image/Home-Landing-scaled-phone.jpeg');
+        height: 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        text-align: center;
+    }
+
+    .homePage .search h1 {
+        color: #fff;
+    }
+
+    .homePage .search-box {
+        background-color: white;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        border-radius: 15px;
+    }
+
+    .homePage .search-box i {
+        font-size: 38px;
+        color: #71916d;
+    }
+
+    .homePage .search-box input {
+        width: 77%;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+
+    /* #footer Design */
+
+    .footer {
+        padding: 0;
+        background-image: linear-gradient(to bottom, rgba(200, 248, 208, 0.52), rgba(13, 75, 29, 0.73)),
+            url('../image/Home-Landing-scaled-phone.jpeg');
+        height: 569px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .footer h1 {
+        color: #fff;
+        margin: 20px;
+    }
+
+
+    /* #Services Page Design */
+
+    .servicesPage .container .row {
+        margin-top: 20px;
+    }
+
+
+
+    /* #Basket Page Design */
+
+    .small-screen {
+        display: block;
+    }
+
+    .big-screen {
+        display: none;
+    }
+
+    .basket {
+        text-align: center;
+    }
+
+    .basket .row {
+        padding-bottom: 20px;
+    }
+
+    .basketPage h1 {
+        margin-bottom: 20px;
+    }
+
+    .basketPage .container {
+        margin-top: 20px;
+    }
+
+    .basketPage .card {
+        margin-bottom: 15px;
+    }
+
+    .basket_title {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .basket h3 {
+        padding-left: 0;
+        text-transform: uppercase;
+    }
+
+}
