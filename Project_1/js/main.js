@@ -105,14 +105,29 @@ $('.signUp').click(function () {
     let inputUser = $('#userName').val();
     let inputPassword = $('#password').val();
     let inputEmail = $('#email').val();
-
+    console.log("reached here")
     if (inputUser !== "" && inputPassword !== "" && inputEmail !== "") {
         const users = {
             name: inputUser,
             password: inputPassword,
             email: inputEmail
         };
-        localStorage.setItem('userData', JSON.stringify(users));
+
+        const usersList = JSON.parse(localStorage.getItem('userData'));
+        console.log(usersList);
+        if (usersList !== null) {
+            usersList.push(users);
+        localStorage.setItem('userData', JSON.stringify(usersList));
+
+        }else{
+            let newUser = [];
+            newUser.push(users)
+            // usersList.push();
+        localStorage.setItem('userData', JSON.stringify(newUser));
+
+        }
+
+
         $('.Sign_up').css('display', 'none');
         $('.Sign_in').css('display', 'block');
     } else {
@@ -126,19 +141,25 @@ $('.signIn').click(function () {
     let inputPassword = $('#signIn-password').val();
 
     if (inputUser !== "" && inputPassword !== "") {
-        let data = localStorage.getItem('userData');
+        // const usersList = localStorage.getItem('userData');
+        // let usersArray = [];
+        // usersArray.push(JSON.parse(usersList));
 
-        let userName = JSON.parse(data).name;
-        let password = JSON.parse(data).password;
+        const usersList = JSON.parse(localStorage.getItem('userData'));
+        
+        alert(usersList[0]['name']);
 
-        if (inputUser === userName && inputPassword === password) {
-            $('.Sign_in').css('display', 'none');
-            $('.homePage').css('display', 'block');
-            $('.navbar').css('display', 'block');
-            $('.footer').css('display', 'block');
-        } else {
-            $('.alert-warning').css('display', 'block');
-        }
+        // let userName = JSON.parse(data).name;
+        // let password = JSON.parse(data).password;
+
+        // if (inputUser === userName && inputPassword === password) {
+        //     $('.Sign_in').css('display', 'none');
+        //     $('.homePage').css('display', 'block');
+        //     $('.navbar').css('display', 'block');
+        //     $('.footer').css('display', 'block');
+        // } else {
+        //     $('.alert-warning').css('display', 'block');
+        // }
     } else {
         alert(`Please enter your information !!!`);
     }
