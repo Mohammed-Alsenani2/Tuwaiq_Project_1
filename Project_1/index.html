@@ -29,6 +29,9 @@
                                 <div class="alert alert-warning" style="display: none;" role="alert">
                                     Please enter your information !!!
                                 </div>
+                                <div class="alert alert-warning" style="display: none;" id="haveAnAccount" role="alert">
+                                    This User is already have an account !!!
+                                </div>
                                 <h1>Sign up</h1>
                                 <div class="form-floating mb-3">
                                     <input type="username" class="form-control" id="userName" placeholder="User name">
@@ -128,8 +131,18 @@
                         <a class="nav-link" aria-current="page" href="#statistics">
                             <i class="fas fa-signal"></i>Statistics</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="" id="Favorite_Page">
+                            <i class="far fa-heart"></i> Favorite Services
+                        </a>
+                    </li>
                 </ul>
-                <span>
+                <span style="display: contents;">
+                    <button type="button" class="btn btn-outline-success signInAndOut none" id="SignInBtn">
+                        <i class="fas fa-sign-in-alt"></i>Sign in</button>
+                    <button type="button" class="btn btn-outline-success signInAndOut" id="SignOutBtn">
+                        <i class="fas fa-sign-out-alt"></i>Sign out</button>
+
                     <i class="fas fa-sun remove" id="icon-light"></i>
                     <i class="fas fa-moon" id="icon-dark"></i>
                 </span>
@@ -170,41 +183,21 @@
         <!-- #statistics -->
         <div class="container services" id="statistics">
             <h1>statistics</h1>
-            <div class="row">
-                <div class="col-12 col-md-3">
-                    <div class="card">
-                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-
-                        </div>
+            <div class="row" style="text-align:center">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <h3>Services</h3>
+                    </div>
+                    <div class="row">
+                        <h2>30</h2>
                     </div>
                 </div>
-                <div class="col-12 col-md-3">
-                    <div class="card">
-                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-
-                        </div>
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <h3>Users</h3>
                     </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="card">
-                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="card">
-                        <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-
-                        </div>
+                    <div class="row">
+                        <h2>5</h2>
                     </div>
                 </div>
             </div>
@@ -220,6 +213,15 @@
                 </div>
             </div>
             <div class="row category-items">
+            </div>
+            <div class="row">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
@@ -326,125 +328,15 @@
         </div>
     </div>
 
-    <!-- #Basket Page -->
-    <div class="basketPage" style="display: none">
-        <!-- #labtop Basket -->
-        <div class="container big-screen">
+    <!-- #Favorite Page -->
+    <div class="servicesPage" style="display: none">
+        <div class="container">
             <div class="row">
-                <div class="col-10">
-                    <h1>Shopping Basket</h1>
+                <div class="col-12">
+                    <h1 class="category-title" id="CheckData">Favorite Page</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-12">
-                    <div class="card">
-                        <div class="card-body basket">
-                            <div class="row basket_title">
-                                <div class="col-6">
-                                    service
-                                </div>
-                                <div class="col center">
-                                    count
-                                </div>
-                                <div class="col center">
-                                    price
-                                </div>
-                                <div class="col center">
-                                    delete
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-6" style="padding-left: 0;">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
-                                        </div>
-                                        <div class="col">
-                                            <div class="row">
-                                                <h3>service title</h3>
-                                            </div>
-                                            <div class="row" style="text-align: justify;">
-                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam quia
-                                                perferendis exercitationem explicabo perspiciatis? Consequatur provident
-                                                facere libero fuga eveniet expedita suscipit distinctio sint, sequi quia
-                                                odio ratione veritatis laborum?
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col center">
-                                    2
-                                </div>
-                                <div class="col center">
-                                    5$
-                                </div>
-                                <div class="col center">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- #Phone Basket -->
-        <div class="container small-screen">
-            <div class="row">
-                <div class="col-10">
-                    <h1>Shopping Basket</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-12">
-                    <div class="card">
-                        <div class="card-body basket">
-                            <div class="row" style="padding-bottom: 30px;">
-                                <div class="col-4 basket_title">
-                                    <div class="row">service</div>
-                                </div>
-                                <div class="col-8">
-                                    <img src="image/Home-Landing-scaled.jpeg" class="card-img-top" alt="...">
-                                    <div class="col">
-                                        <div class="row">
-                                            <h3>service title</h3>
-                                        </div>
-                                        <div class="row" style="text-align: justify;">
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam quia
-                                            perferendis exercitationem explicabo perspiciatis?
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 basket_title">
-                                    <div class="row">count</div>
-                                </div>
-                                <div class="col-8">
-                                    2
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 basket_title">
-                                    <div class="row">price</div>
-                                </div>
-                                <div class="col-8">
-                                    5$
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 basket_title">
-                                    <div class="row">delete</div>
-                                </div>
-                                <div class="col-8">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row favorite-items">
             </div>
         </div>
     </div>
