@@ -98,9 +98,21 @@ for (const property in Services) {
     $(`#${property}`).click(function () {
         const userLogin = sessionStorage.getItem('UserName');
         if (userLogin !== null) {
+            // add and remove pages
             $('.servicesPage').css('display', 'block');
             $('.homePage').css('display', 'none');
-            $('.category-title').append(property);
+            $('.Sign_up').css('display', 'none');
+            $('.Sign_in').css('display', 'none');
+            $('#myFavoritePage').css('display', 'none');
+            $('.oneServicePage').css('display', 'none');
+            $('.navbar').css('display', 'block');
+            $('.footer').css('display', 'block');
+
+            $('.servicesPage .category-title').html(''); // clear data
+
+            $('.servicesPage .category-title').append(property);
+
+            $('.category-items').html(''); // clear data
 
             Services[property]['types'].forEach(element => {
                 $('.category-items').append(
@@ -113,6 +125,7 @@ for (const property in Services) {
                                 </div>
                             </div>
                         </div>`);
+
                 $(`#${element.name}`).click(function () {
                     $('.servicesPage').css('display', 'none');
                     $('.homePage').css('display', 'none');
@@ -145,18 +158,31 @@ $('.signUp').click(function () {
             password: inputPassword,
             email: inputEmail
         };
+
         const usersList = JSON.parse(localStorage.getItem('userData'));
+
+        // Check if the usersList Empty or not
         if (usersList !== null) {
-            usersList.push(users);
-            localStorage.setItem('userData', JSON.stringify(usersList));
+            // Check if the usersList have this user or not
+            const result = usersList.find((name) => name.name === inputUser && name.email === inputEmail);
+            if (result) {
+                // if the user there then pritn alert
+                $('#haveAnAccount').css('display', 'block');
+            } else {
+                // add the user
+                usersList.push(users);
+                localStorage.setItem('userData', JSON.stringify(usersList));
+                $('.Sign_up').css('display', 'none');
+                $('.Sign_in').css('display', 'block');
+            }
         } else {
+            // add new user if data is Empty
             let newUser = [];
             newUser.push(users)
             localStorage.setItem('userData', JSON.stringify(newUser));
+            $('.Sign_up').css('display', 'none');
+            $('.Sign_in').css('display', 'block');
         }
-
-        $('.Sign_up').css('display', 'none');
-        $('.Sign_in').css('display', 'block');
     } else {
         $('.Sign_up .alert-warning').css('display', 'block');
     }
@@ -166,6 +192,7 @@ $('.signUp').click(function () {
 $('.signIn').click(function () {
     let inputUser = $('#signIn-username').val();
     let inputPassword = $('#signIn-password').val();
+
     const usersList = JSON.parse(localStorage.getItem('userData'));
 
     if (inputUser !== "" && inputPassword !== "") {
@@ -175,6 +202,8 @@ $('.signIn').click(function () {
                 $('.homePage').css('display', 'block');
                 $('.navbar').css('display', 'block');
                 $('.footer').css('display', 'block');
+                $('#signIn-username').val("");
+                $('#signIn-password').val("");
 
                 // Check if Session Storage have Data or No *****
                 sessionStorage.setItem('UserName', inputUser);
@@ -182,16 +211,18 @@ $('.signIn').click(function () {
                 if (userLogin !== null) {
                     $('#SignOutBtn').css('display', 'block');
                     $('#SignInBtn').css('display', 'none');
+                    $('#WelcomeUser').text(`Welcome: ${userLogin}`);
                 } else {
                     $('#SignOutBtn').css('display', 'none');
                     $('#SignInBtn').css('display', 'block');
                 }
             } else {
                 $('.alert-warning').css('display', 'block');
+                $('#information').css('display', 'none');
             }
         });
     } else {
-        alert(`Please enter your information !!!`);
+        $('#information').css('display', 'block');
     }
 });
 
@@ -209,47 +240,114 @@ $('#SignOutBtn').click(function () {
     $('.homePage').css('display', 'none');
     $('.navbar').css('display', 'none');
     $('.footer').css('display', 'none');
+
+    $('.alert-warning').css('display', 'none');
+    $('#information').css('display', 'none');
 });
 
 
 /* Favorite Page */
 $('#Favorite_Page').click(function () {
+    $('.favorite-items').html('');
     // Show Favorite Page
+    $('.Sign_in').css('display', 'none');
+    $('#myFavoritePage').css('display', 'block');
+    $('.homePage').css('display', 'none');
+
+    const favoriteUserList = JSON.parse(localStorage.getItem('favoriteUser'));
+    favoriteUserList.forEach(element => {
+        for (const key in element) {
+            const userID = sessionStorage.getItem('UserName');
+            if (userID === element[key]['userName']) {
+                for (const item in element[key]['Favorites']) {
+                    $('.favorite-items').append(
+                        `<div class="col-12 col-md-3">
+                                <div class="card">
+                                    <img src="${element[key]['Favorites'][item]['image']}" class="card-img-top" alt="..." height:"170px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${element[key]['Favorites'][item]['name']}</h5>
+                                    </div>
+                                </div>
+                            </div>`);
+                }
+            }
+        }
+    });
 });
 
 
-/* Favorite Object */
-const Favorite = [{
-        userName: 's',
-        Favorites: [{
-            name: 'JavaScript',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
-            description: 'JavaScript',
-        }, ],
-    },
-    {
-        userName: 'Mohammed',
-        Favorites: [{
-            name: 'JavaScript',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
-            description: 'JavaScript',
-        }, ],
-    }
-];
 
-Favorite.forEach(element => {
-    const userID = sessionStorage.getItem('UserName');
-    if (userID === element['userName']) {
-        element['Favorites'].forEach(key => {
-            $('.favorite-items').append(
-                `<div class="col-12 col-md-3" id="${key['name']}">
-                            <div class="card">
-                                <img src="${key['image']}" class="card-img-top" alt="..." height:"170px">
-                                <div class="card-body">
-                                    <h5 class="card-title">${key['name']}</h5>
-                                </div>
-                            </div>
-                        </div>`);
-        });
+/* Favorite Object */
+/********************************************** Test Object **************************************************/
+// const Favorite = [{
+//         userName: 's',
+//         Favorites: [{
+//             name: 'JavaScript',
+//             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
+//             description: 'JavaScript',
+//         }, ],
+//     },
+//     {
+//         userName: 'Mohammed',
+//         Favorites: [{
+//             name: 'JavaScript',
+//             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
+//             description: 'JavaScript',
+//         }, ],
+//     }
+// ];
+
+
+// Save favorite of user
+$('#Favorite_item').click(function () {
+    const name = $('.service-title').text();
+    const image = $('.service-img').attr('src');
+    const description = $('.service-description').text();
+
+    const Favorite = [{
+        userName: sessionStorage.getItem('UserName'),
+        Favorites: [{
+            name: name,
+            image: image,
+            description: description,
+        }, ],
+    }];
+
+    const favoriteUserList = JSON.parse(localStorage.getItem('favoriteUser'));
+
+    if (favoriteUserList !== null) {
+        favoriteUserList.push(Favorite);
+        localStorage.setItem('favoriteUser', JSON.stringify(favoriteUserList));
+    } else {
+        let newFavorite = [];
+        newFavorite.push(Favorite)
+        localStorage.setItem('favoriteUser', JSON.stringify(newFavorite));
     }
+})
+
+/*  Click Navbar button   */
+// home
+$('#Home_Page').click(function () {
+    $('.Sign_up').css('display', 'none');
+    $('.Sign_in').css('display', 'none');
+    $('#myFavoritePage').css('display', 'none');
+    $('.servicesPage').css('display', 'none');
+    $('.oneServicePage').css('display', 'none');
+
+    $('.navbar').css('display', 'block');
+    $('.homePage').css('display', 'block');
+    $('.footer').css('display', 'block');
+});
+
+// favorite
+$('#Favorite_Page').click(function () {
+    $('.Sign_up').css('display', 'none');
+    $('.Sign_in').css('display', 'none');
+    $('.servicesPage').css('display', 'none');
+    $('.oneServicePage').css('display', 'none');
+    $('#myFavoritePage').css('display', 'block');
+
+    $('.navbar').css('display', 'block');
+    $('.homePage').css('display', 'none');
+    $('.footer').css('display', 'block');
 });

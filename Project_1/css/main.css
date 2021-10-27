@@ -54,6 +54,10 @@ body {
     box-shadow: none;
 }
 
+.nav-item{
+    cursor: pointer;
+}
+
 .navbar .fas {
     margin-right: 5px;
 }
@@ -149,6 +153,11 @@ body {
 .category-items .card img,
 .servicesPage .card img {
     height: 170px;
+}
+
+.userInfo{
+    margin-right: 30px;
+    color: #fff;
 }
 
 .btn-success {

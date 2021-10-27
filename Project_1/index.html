@@ -18,7 +18,7 @@
 
 <body class="">
     <!-- #Sign up Page -->
-    <div class="Sign_up">
+    <div class="Sign_up" style="display: none">
         <div class="container">
             <div class="row" text-align="center">
                 <div class="col-md-3"></div>
@@ -75,6 +75,9 @@
                                 <div class="alert alert-warning" style="display: none;" role="alert">
                                     Username or password is incorrect !!!
                                 </div>
+                                <div class="alert alert-warning" id="information" style="display: none;" role="alert">
+                                    Please enter your information !!!
+                                </div>
                                 <h1>Sign in</h1>
                                 <div class="form-floating mb-3">
                                     <input type="username" class="form-control" id="signIn-username"
@@ -104,7 +107,7 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="display: none">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Services</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -115,11 +118,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#header">
+                        <a class="nav-link" aria-current="page" id="Home_Page">
                             <i class="fas fa-home"></i>Home
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#services">
                             <i class="fas fa-hands-helping"></i>Services</a>
                     </li>
@@ -130,19 +133,19 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#statistics">
                             <i class="fas fa-signal"></i>Statistics</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="" id="Favorite_Page">
+                        <a class="nav-link" aria-current="page" id="Favorite_Page">
                             <i class="far fa-heart"></i> Favorite Services
                         </a>
                     </li>
                 </ul>
                 <span style="display: contents;">
+                    <i class="userInfo" id="WelcomeUser"></i>
                     <button type="button" class="btn btn-outline-success signInAndOut none" id="SignInBtn">
                         <i class="fas fa-sign-in-alt"></i>Sign in</button>
                     <button type="button" class="btn btn-outline-success signInAndOut" id="SignOutBtn">
                         <i class="fas fa-sign-out-alt"></i>Sign out</button>
-
                     <i class="fas fa-sun remove" id="icon-light"></i>
                     <i class="fas fa-moon" id="icon-dark"></i>
                 </span>
@@ -151,7 +154,7 @@
     </nav>
 
     <!-- #Home Page -->
-    <div class="homePage" style="display: none">
+    <div class="homePage">
         <!-- #headr -->
         <div class="row" id="header">
             <div class="col head">
@@ -234,8 +237,8 @@
                     <h1 class="service-title"></h1>
                 </div>
                 <div class="col-4 col-md-2" style="text-align: right">
-                    <button type="button" class="btn btn-success">Buy
-                        <i class="fas fa-shopping-basket"></i>
+                    <button type="button" class="btn btn-success" id="Favorite_item">Favorite
+                        <i class="far fa-heart"></i>
                     </button>
                 </div>
             </div>
@@ -245,7 +248,6 @@
                         <img src="image/Home-Landing-scaled.jpeg" class="card-img-top service-img" alt="...">
                         <div class="card-body">
                             <p class="card-text service-description"></p>
-
                         </div>
                     </div>
                 </div>
@@ -329,11 +331,11 @@
     </div>
 
     <!-- #Favorite Page -->
-    <div class="servicesPage" style="display: none">
+    <div class="servicesPage" id="myFavoritePage" style="display: none">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="category-title" id="CheckData">Favorite Page</h1>
+                    <h1 class="" id="CheckData">Favorite Page</h1>
                 </div>
             </div>
             <div class="row favorite-items">
@@ -342,7 +344,7 @@
     </div>
 
     <!-- #footer -->
-    <div class="footer" style="display: none">
+    <div class="footer">
         <div class="row">
             <div class="col footer">
                 <div class="row">
