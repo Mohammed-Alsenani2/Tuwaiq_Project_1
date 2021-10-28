@@ -1,3 +1,50 @@
+$(document).ready(function () {
+    const page = sessionStorage.getItem('page');
+    if (page !== null) {
+        if (page === "Home") {
+            $('.Sign_up').css('display', 'none');
+            $('.Sign_in').css('display', 'none');
+            $('.servicesPage').css('display', 'none');
+            $('.oneServicePage').css('display', 'none');
+            $('#myFavoritePage').css('display', 'none');
+
+            $('.navbar').css('display', 'block');
+            $('.homePage').css('display', 'block');
+            $('.footer').css('display', 'block');
+        } else if (page === "Favorite") {
+            $('.Sign_up').css('display', 'none');
+            $('.Sign_in').css('display', 'none');
+            $('.servicesPage').css('display', 'none');
+            $('.oneServicePage').css('display', 'none');
+            $('#myFavoritePage').css('display', 'block');
+
+            $('.navbar').css('display', 'block');
+            $('.homePage').css('display', 'none');
+            $('.footer').css('display', 'block');
+        } else if (page === "Sign_in") {
+            $('.Sign_up').css('display', 'none');
+            $('.Sign_in').css('display', 'block');
+            $('.servicesPage').css('display', 'none');
+            $('.oneServicePage').css('display', 'none');
+            $('#myFavoritePage').css('display', 'none');
+
+            $('.navbar').css('display', 'none');
+            $('.homePage').css('display', 'none');
+            $('.footer').css('display', 'none');
+        } else if (page === "Sing_up") {
+            $('.Sign_up').css('display', 'block');
+            $('.Sign_in').css('display', 'none');
+            $('.servicesPage').css('display', 'none');
+            $('.oneServicePage').css('display', 'none');
+            $('#myFavoritePage').css('display', 'none');
+
+            $('.navbar').css('display', 'none');
+            $('.homePage').css('display', 'none');
+            $('.footer').css('display', 'none');
+        }
+    }
+});
+
 /* Dark mode */
 $('#icon-light').click(function () {
     $('#icon-dark').toggleClass('remove');
@@ -168,6 +215,7 @@ $('.signUp').click(function () {
             if (result) {
                 // if the user there then pritn alert
                 $('#haveAnAccount').css('display', 'block');
+                $('.Sign_up .alert-warning').css('display', 'none');
             } else {
                 // add the user
                 usersList.push(users);
@@ -185,6 +233,7 @@ $('.signUp').click(function () {
         }
     } else {
         $('.Sign_up .alert-warning').css('display', 'block');
+        $('#haveAnAccount').css('display', 'none');
     }
 });
 
@@ -216,6 +265,9 @@ $('.signIn').click(function () {
                     $('#SignOutBtn').css('display', 'none');
                     $('#SignInBtn').css('display', 'block');
                 }
+
+                // put Home page in sessionStorage
+                sessionStorage.setItem('page', 'Home');
             } else {
                 $('.alert-warning').css('display', 'block');
                 $('#information').css('display', 'none');
@@ -227,6 +279,7 @@ $('.signIn').click(function () {
 });
 
 $('#SignInBtn').click(function () {
+    sessionStorage.setItem('page', 'Sign_in');
     $('.Sign_in').css('display', 'block');
     $('.homePage').css('display', 'none');
     $('.navbar').css('display', 'none');
@@ -236,6 +289,7 @@ $('#SignInBtn').click(function () {
 // Sign out
 $('#SignOutBtn').click(function () {
     sessionStorage.removeItem('UserName');
+    sessionStorage.setItem('page', 'Sign_in');
     $('.Sign_in').css('display', 'block');
     $('.homePage').css('display', 'none');
     $('.navbar').css('display', 'none');
@@ -245,9 +299,39 @@ $('#SignOutBtn').click(function () {
     $('#information').css('display', 'none');
 });
 
+// Create Account button
+$('.createAccount').click(function () {
+    sessionStorage.setItem('page', 'Sing_up');
+
+    $('.Sign_up').css('display', 'block');
+    $('.Sign_in').css('display', 'none');
+    $('.servicesPage').css('display', 'none');
+    $('.oneServicePage').css('display', 'none');
+    $('#myFavoritePage').css('display', 'none');
+
+    $('.navbar').css('display', 'none');
+    $('.homePage').css('display', 'none');
+    $('.footer').css('display', 'none');
+});
+
+// Go to Sign in page
+$('#goSignInPage').click(function () {
+    sessionStorage.setItem('page', 'Sign_in');
+
+    $('.Sign_up').css('display', 'none');
+    $('.Sign_in').css('display', 'block');
+    $('.servicesPage').css('display', 'none');
+    $('.oneServicePage').css('display', 'none');
+    $('#myFavoritePage').css('display', 'none');
+
+    $('.navbar').css('display', 'none');
+    $('.homePage').css('display', 'none');
+    $('.footer').css('display', 'none');
+});
 
 /* Favorite Page */
 $('#Favorite_Page').click(function () {
+    sessionStorage.setItem('page', 'Favorite');
     $('.favorite-items').html('');
     // Show Favorite Page
     $('.Sign_in').css('display', 'none');
@@ -328,6 +412,7 @@ $('#Favorite_item').click(function () {
 /*  Click Navbar button   */
 // home
 $('#Home_Page').click(function () {
+    sessionStorage.setItem('page', 'Home');
     $('.Sign_up').css('display', 'none');
     $('.Sign_in').css('display', 'none');
     $('#myFavoritePage').css('display', 'none');
