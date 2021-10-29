@@ -9,14 +9,3 @@ It is a website that provides services in more than one field, such as programmi
 - Used HTML to build the pages and put all pages in one page, and for the design used CSS and Bootstrap finally JavaScript to make this website dynamic.
 
 - Used the Objects to display my component in the page like services and category of services and save users in LocalStorage and save the user how sign-in to my website in Session Storage.
-<br />
-<br />
-# Table
-| Technology    | Use |
-| ------------- | ------------- |
-| HTML             | Build website  |
-| CSS              | Design website  |
-| Bootstrap        | Design website  |
-| JavaScript       | Make website dynamic  |
-| LocalStorage     | Save important data (User's data)  |
-| SessionStorage   | Save some data like users sign in  |
