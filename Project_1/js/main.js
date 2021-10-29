@@ -129,7 +129,39 @@ const Services = {
         description: 'API',
         image: 'https://www.astera.com/wp-content/uploads/2020/01/rest.png',
     },
+    KK: {
+        name: 'API',
+        description: 'API',
+        image: 'https://www.astera.com/wp-content/uploads/2020/01/rest.png',
+    },
 };
+
+
+// Save Services in the localStorage
+$(document).ready(function () {
+    const servicesList = JSON.parse(localStorage.getItem('servicesList'));
+    if (servicesList !== null) {
+        const sName = servicesList.find(({ name }) => name === 'Programming');
+        alert(sName);
+        // servicesList.forEach(element => {
+        //     for (const key in element) {
+        //         const result = element[key].find((name) => name['name'] === element[key]['name']);
+        //         alert(result);
+        //         // if (result) {
+        //         //     alert("Hello");
+        //         // } else {
+        //         //     servicesList.push(Services);
+        //         //     localStorage.setItem('servicesList', JSON.stringify(servicesList));
+        //         // }
+        //     }
+        // });
+    } else {
+        let newService = [];
+        newService.push(Services);
+        localStorage.setItem('servicesList', JSON.stringify(newService));
+    }
+});
+
 
 for (const property in Services) {
     $('.services-items').append(
@@ -191,8 +223,8 @@ for (const property in Services) {
     });
 }
 
-/* Save User Data in localStorage and get it */
 
+/* Save User Data in localStorage and get it */
 // Sign Up
 $('.signUp').click(function () {
     let inputUser = $('#userName').val();
@@ -436,3 +468,18 @@ $('#Favorite_Page').click(function () {
     $('.homePage').css('display', 'none');
     $('.footer').css('display', 'block');
 });
+
+
+// how many users in the website
+const numberOfUsers = JSON.parse(localStorage.getItem('userData')).length;
+$('#numberOfUsers').html(numberOfUsers);
+
+// how many services in the website
+const numberOfServices = JSON.parse(localStorage.getItem('servicesList'));
+let count = 0;
+numberOfServices.forEach(element => {
+    for (const key in element) {
+        count++;
+    }
+});
+$('#numberOfServices').html(count);
