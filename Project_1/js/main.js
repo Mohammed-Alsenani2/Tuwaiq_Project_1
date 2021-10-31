@@ -129,38 +129,33 @@ const Services = {
         description: 'API',
         image: 'https://www.astera.com/wp-content/uploads/2020/01/rest.png',
     },
-    KK: {
-        name: 'API',
-        description: 'API',
-        image: 'https://www.astera.com/wp-content/uploads/2020/01/rest.png',
-    },
 };
 
 
 // Save Services in the localStorage
-$(document).ready(function () {
-    const servicesList = JSON.parse(localStorage.getItem('servicesList'));
-    if (servicesList !== null) {
-        const sName = servicesList.find(({ name }) => name === 'Programming');
-        alert(sName);
-        // servicesList.forEach(element => {
-        //     for (const key in element) {
-        //         const result = element[key].find((name) => name['name'] === element[key]['name']);
-        //         alert(result);
-        //         // if (result) {
-        //         //     alert("Hello");
-        //         // } else {
-        //         //     servicesList.push(Services);
-        //         //     localStorage.setItem('servicesList', JSON.stringify(servicesList));
-        //         // }
-        //     }
-        // });
-    } else {
-        let newService = [];
-        newService.push(Services);
-        localStorage.setItem('servicesList', JSON.stringify(newService));
-    }
-});
+// $(document).ready(function () {
+//     const servicesList = JSON.parse(localStorage.getItem('servicesList'));
+//     if (servicesList !== null) {
+//         const sName = servicesList.find(({ name }) => name === 'Programming');
+//         alert(sName);
+//         // servicesList.forEach(element => {
+//         //     for (const key in element) {
+//         //         const result = element[key].find((name) => name['name'] === element[key]['name']);
+//         //         alert(result);
+//         //         // if (result) {
+//         //         //     alert("Hello");
+//         //         // } else {
+//         //         //     servicesList.push(Services);
+//         //         //     localStorage.setItem('servicesList', JSON.stringify(servicesList));
+//         //         // }
+//         //     }
+//         // });
+//     } else {
+//         let newService = [];
+//         newService.push(Services);
+//         localStorage.setItem('servicesList', JSON.stringify(newService));
+//     }
+// });
 
 
 for (const property in Services) {
@@ -223,6 +218,11 @@ for (const property in Services) {
     });
 }
 
+function validateEmail(email) {
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return re.test(email);
+}
+
 
 /* Save User Data in localStorage and get it */
 // Sign Up
@@ -232,36 +232,40 @@ $('.signUp').click(function () {
     let inputEmail = $('#email').val();
 
     if (inputUser !== "" && inputPassword !== "" && inputEmail !== "") {
-        const users = {
-            name: inputUser,
-            password: inputPassword,
-            email: inputEmail
-        };
+        if (validateEmail(inputEmail)) {
+            const users = {
+                name: inputUser,
+                password: inputPassword,
+                email: inputEmail
+            };
 
-        const usersList = JSON.parse(localStorage.getItem('userData'));
+            const usersList = JSON.parse(localStorage.getItem('userData'));
 
-        // Check if the usersList Empty or not
-        if (usersList !== null) {
-            // Check if the usersList have this user or not
-            const result = usersList.find((name) => name.name === inputUser && name.email === inputEmail);
-            if (result) {
-                // if the user there then pritn alert
-                $('#haveAnAccount').css('display', 'block');
-                $('.Sign_up .alert-warning').css('display', 'none');
+            // Check if the usersList Empty or not
+            if (usersList !== null) {
+                // Check if the usersList have this user or not
+                const result = usersList.find((name) => name.name === inputUser && name.email === inputEmail);
+                if (result) {
+                    // if the user there then pritn alert
+                    $('#haveAnAccount').css('display', 'block');
+                    $('.Sign_up .alert-warning').css('display', 'none');
+                } else {
+                    // add the user
+                    usersList.push(users);
+                    localStorage.setItem('userData', JSON.stringify(usersList));
+                    $('.Sign_up').css('display', 'none');
+                    $('.Sign_in').css('display', 'block');
+                }
             } else {
-                // add the user
-                usersList.push(users);
-                localStorage.setItem('userData', JSON.stringify(usersList));
+                // add new user if data is Empty
+                let newUser = [];
+                newUser.push(users)
+                localStorage.setItem('userData', JSON.stringify(newUser));
                 $('.Sign_up').css('display', 'none');
                 $('.Sign_in').css('display', 'block');
             }
-        } else {
-            // add new user if data is Empty
-            let newUser = [];
-            newUser.push(users)
-            localStorage.setItem('userData', JSON.stringify(newUser));
-            $('.Sign_up').css('display', 'none');
-            $('.Sign_in').css('display', 'block');
+        }else{
+            $('#validEmail').css('display', 'block');
         }
     } else {
         $('.Sign_up .alert-warning').css('display', 'block');

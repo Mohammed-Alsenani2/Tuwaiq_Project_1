@@ -42,11 +42,6 @@ body {
 
 /* #navbar */
 
-.navbar-dark .navbar-toggler-icon,
-.navbar-light .navbar-toggler-icon {
-    background-image: url("https://cdn-icons.flaticon.com/png/512/4442/premium/4442029.png?token=exp=1634986229~hmac=dab20c35cb01bce8d6687c861d8a9c23");
-}
-
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
@@ -169,6 +164,17 @@ body {
 .btn-success:focus {
     background-color: #122620;
     border: 1px solid #122620;
+}
+
+.btn-outline-success{
+    border: 1px solid #B68D40;
+    color: #fff;
+}
+
+.btn-outline-success:hover,
+.btn-outline-success:focus{
+    background-color: #B68D40;
+    border: 1px solid #B68D40;
 }
 
 
